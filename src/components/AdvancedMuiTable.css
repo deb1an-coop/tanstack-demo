@@ -1,0 +1,521 @@
+/* Advanced MUI-like styling for TanStack Table */
+
+/* Import Roboto font for MUI-like look */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* Import Material Icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* Container styling */
+.mui-table-container {
+  font-family: 'Roboto', sans-serif;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 
+              0px 1px 1px 0px rgba(0,0,0,0.14), 
+              0px 1px 3px 0px rgba(0,0,0,0.12);
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* Directory navigation */
+.mui-directory-nav {
+  padding: 8px 16px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+
+.mui-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.breadcrumb-item {
+  cursor: pointer;
+  padding: 4px 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.breadcrumb-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.breadcrumb-separator {
+  margin: 0 4px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* Toolbar styling */
+.mui-table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 16px;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+
+.mui-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mui-table-toolbar h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.selected-count {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #1976d2;
+  font-weight: 500;
+  background-color: rgba(25, 118, 210, 0.08);
+  padding: 4px 12px;
+  border-radius: 16px;
+}
+
+.mui-table-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Search input styling */
+.mui-search {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+
+.mui-search input {
+  border: none;
+  background: transparent;
+  margin-left: 8px;
+  outline: none;
+  font-size: 0.875rem;
+  min-width: 180px;
+}
+
+.mui-search .material-icons {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 20px;
+}
+
+/* Button styling */
+.mui-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.mui-button-primary {
+  background-color: #1976d2;
+  color: white;
+}
+
+.mui-button-primary:hover {
+  background-color: #1565c0;
+}
+
+.mui-button-secondary {
+  background-color: white;
+  color: #1976d2;
+  border: 1px solid rgba(25, 118, 210, 0.5);
+}
+
+.mui-button-secondary:hover {
+  background-color: rgba(25, 118, 210, 0.04);
+  border: 1px solid #1976d2;
+}
+
+.mui-icon-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.54);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mui-icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.mui-icon-button:disabled {
+  color: rgba(0, 0, 0, 0.26);
+  cursor: default;
+}
+
+.mui-icon-button .material-icons {
+  font-size: 20px;
+}
+
+/* Table wrapper to enable horizontal scrolling if needed */
+.mui-table-wrapper {
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+
+/* Table styling */
+.mui-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Header styling */
+.mui-table thead {
+  background-color: #f5f5f5;
+}
+
+.mui-table th {
+  padding: 16px;
+  font-weight: 500;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.87);
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+  white-space: nowrap;
+}
+
+.mui-table th.sortable {
+  cursor: pointer;
+}
+
+.th-content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sort-icon {
+  display: flex;
+  align-items: center;
+}
+
+.sort-icon .material-icons {
+  font-size: 18px;
+}
+
+.sort-inactive {
+  opacity: 0.3;
+}
+
+/* Row styling */
+.mui-table-row {
+  transition: background-color 0.15s;
+}
+
+.mui-table-row:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.folder-row {
+  cursor: pointer;
+}
+
+.mui-table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+
+/* File cell styling */
+.file-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+}
+
+.folder-icon .material-icons {
+  color: #FFC107;
+}
+
+.excel-icon .material-icons {
+  color: #4CAF50;
+}
+
+.pdf-icon .material-icons {
+  color: #F44336;
+}
+
+.doc-icon .material-icons {
+  color: #2196F3;
+}
+
+.image-icon .material-icons {
+  color: #9C27B0;
+}
+
+.file-name {
+  font-weight: 400;
+}
+
+.expand-button {
+  margin-left: auto;
+}
+
+/* Empty folder styling */
+.empty-folder {
+  text-align: center;
+  height: 200px;
+}
+
+.empty-folder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.empty-folder-content .material-icons {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+/* Expanded row content */
+.expanded-row {
+  background-color: #f9f9f9;
+}
+
+.expanded-row td {
+  padding: 0;
+}
+
+/* Excel sheets container */
+.excel-sheets-container {
+  padding: 16px;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+
+.excel-sheets-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.875rem;
+}
+
+.sheet-select-all {
+  margin-left: auto;
+  font-size: 0.75rem !important;
+  padding: 2px 8px !important;
+  min-height: 28px;
+}
+
+.excel-sheets-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.excel-sheet-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.excel-sheet-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.excel-sheet-item.selected {
+  background-color: rgba(25, 118, 210, 0.08);
+  border-color: rgba(25, 118, 210, 0.5);
+  color: #1976d2;
+}
+
+.sheet-checkbox {
+  margin: 0;
+}
+
+.sheet-icon {
+  font-size: 16px;
+  color: #4CAF50;
+}
+
+.excel-sheet-item.selected .sheet-icon {
+  color: #1976d2;
+}
+
+.sheet-name {
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* Checkbox styling */
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mui-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: 2px solid rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+}
+
+.mui-checkbox:checked {
+  background-color: #1976d2;
+  border-color: #1976d2;
+}
+
+.mui-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.mui-checkbox:indeterminate {
+  background-color: #1976d2;
+  border-color: #1976d2;
+}
+
+.mui-checkbox:indeterminate::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 7px;
+  width: 10px;
+  height: 2px;
+  background-color: white;
+}
+
+/* Action buttons in rows */
+.action-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+/* Pagination styling */
+.mui-table-pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.mui-rows-per-page {
+  display: flex;
+  align-items: center;
+  margin-right: 32px;
+}
+
+.mui-rows-per-page span {
+  margin-right: 8px;
+}
+
+.mui-rows-per-page select {
+  margin-left: 8px;
+  border: none;
+  background-color: transparent;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.mui-pagination-info {
+  margin-right: 32px;
+}
+
+.mui-pagination-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mui-table-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .mui-table-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .mui-search {
+    width: 100%;
+  }
+  
+  .mui-search input {
+    width: 100%;
+  }
+  
+  .excel-sheets-list {
+    flex-direction: column;
+  }
+  
+  .mui-table-pagination {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .mui-rows-per-page,
+  .mui-pagination-info {
+    margin-right: 0;
+  }
+}
